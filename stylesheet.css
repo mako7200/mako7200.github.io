@@ -14,7 +14,7 @@ a {
 
 .container {
   width: 100%;
-  padding: 15px 15px;
+  padding: 0 15px;
   margin: 0 auto;
 }
 
@@ -36,7 +36,7 @@ a {
 .top-wrapper p {
   opacity: 0.7;
   font-size: 16px;
-  margin-bottom: 40px;
+  margin: 40px;
   color: #d7eeff;
 }
 
