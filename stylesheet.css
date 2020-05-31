@@ -14,7 +14,7 @@ a {
 
 .container {
   width: 100%;
-  padding: 15px;
+  padding: 0 15px;
   margin: 0 auto;
 }
 
@@ -61,11 +61,11 @@ a {
 }
 
 .btn {
-  padding: 8px 20px;
+  padding: 8px 26px;
   color: white;
   display: inline-block;
   opacity: 0.8;
-  border-radius: 20px;
+  border-radius: 10px;
   text-align: center;
 }
 
@@ -78,7 +78,7 @@ a {
 }
 
 header {
-  height: 65px;
+  height: 70px;
   width: 100%;
   background-color: rgba(34,49,52,0.9);
   position :fixed;
@@ -97,7 +97,7 @@ header {
 
 .header-right {
   float: right;
-  margin-right: -25px;
+  margin-right: 25px;
 }
 
 .header-right a {
