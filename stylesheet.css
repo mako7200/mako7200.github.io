@@ -5,6 +5,7 @@
 body {
   margin: 0;
   font-family: "Hiragino Kaku Gothic ProN";
+  background-color: black;
 }
 
 a {
@@ -21,7 +22,7 @@ a {
   padding: 180px 0 100px 0;
   background-image: url();
   background-size: cover;
-  color: black;
+  color: white;
   text-align: center;
 }
 
