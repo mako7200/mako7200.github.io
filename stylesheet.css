@@ -34,10 +34,10 @@ a {
 }
 
 .top-wrapper p {
-  opacity: 0.5;
+  opacity: 0.8;
   font-size: 16px;
   margin: 40px;
-  color: red;
+  color: white;
 }
 
 .btn-wrapper {
