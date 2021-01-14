@@ -101,7 +101,7 @@ header {
 }
 
 .header-right a {
-  line-height: 65px;
+  line-height: 100px;
   padding: 0 25px;
   color: white;
   display: block;
@@ -114,7 +114,7 @@ header {
 }
 
 .lesson-wrapper {
-  height: 700px;
+  height: 2000px;
   padding-bottom: 80px;
   padding-left: 5%;
   padding-right: 5%;
