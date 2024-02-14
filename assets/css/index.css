@@ -1,4 +1,65 @@
-/*========= ナビゲーションのためのCSS ===============*/
+/*===========================================================*/
+/*【】*/
+/*===========================================================*/
+
+
+
+
+/*===========================================================*/
+/*【ローディング】*/
+/*===========================================================*/
+/* Loading背景画面設定　*/
+#splash {
+  /*fixedで全面に固定*/
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	z-index: 10000;
+	background: black;
+	text-align:center;
+  color: white;
+}
+
+/* Loading画像中央配置　*/
+#splash_logo {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+/* Loading アイコンの大きさ設定　*/
+#splash_logo svg{
+    width:300px;
+}
+
+/*=============== SVGアニメーション内の指定 =================*/
+
+/*アニメーション前の指定*/
+#mask path {
+		fill-opacity: 0;/*最初は透過0で見えない状態*/
+		transition: fill-opacity .5s;/*カラーがつく際のアニメーション0.5秒で変化*/
+		fill: none;/*塗りがない状態*/
+		stroke: #333;/*線の色*/
+	}
+
+/*アニメーション後に.doneというクラス名がで付与された時の指定*/
+#mask.done path{
+  fill: #333;/*塗りの色*/
+  fill-opacity: 1;/*透過1で見える状態*/
+  stroke: none;/*線の色なし*/
+}
+
+
+text {
+  font-size: 190px;
+}
+
+
+
+/*===========================================================*/
+/*【グローバルナビゲーション】*/
+/*===========================================================*/
 
 /*アクティブになったエリア*/
 #g-nav.panelactive{
@@ -9,8 +70,6 @@
   width:100%;
   height: 100vh;
 }
-
-
 /*丸の拡大*/
 .circle-bg{
   position: fixed;
@@ -27,11 +86,9 @@ transform: scale(0);/*scaleをはじめは0に*/
   left:calc(50% - 50px);/*50%から円の半径を引いた値*/
   transition: all .6s;/*0.6秒かけてアニメーション*/
 }
-
 .circle-bg.circleactive{
 transform: scale(50);/*クラスが付与されたらscaleを拡大*/
 }
-
 /*ナビゲーションの縦スクロール*/
 #g-nav-list{
   display: none;/*はじめは表示なし*/
@@ -43,11 +100,9 @@ transform: scale(50);/*クラスが付与されたらscaleを拡大*/
   overflow: auto;
   -webkit-overflow-scrolling: touch;
 }
-
 #g-nav.panelactive #g-nav-list{
   display: block; /*クラスが付与されたら出現*/
 }
-
 /*ナビゲーション*/
 #g-nav ul {
 opacity: 0;/*はじめは透過0*/
@@ -59,12 +114,10 @@ opacity: 0;/*はじめは透過0*/
   transform: translate(-50%,-50%);
   padding: 0 30px 30px 30px;  /*中央にするために追加！*/
 }
-
 /*背景が出現後にナビゲーションを表示*/
 #g-nav.panelactive ul {
   opacity:1;
 }
-
 /* 背景が出現後にナビゲーション li を表示※レイアウトによって調整してください。不必要なら削除*/
 #g-nav.panelactive ul li{
 animation-name:gnaviAnime;
@@ -81,7 +134,6 @@ opacity: 0;
 opacity: 1;
 }
 }
-
 /*リストのレイアウト設定*/
 #g-nav li{
 text-align: center; 
@@ -132,8 +184,6 @@ list-style: none;
     right: 20px;
   }
 }
-
-
 /*×に変化*/	
 .openbtn span{
   display: inline-block;
@@ -145,19 +195,15 @@ list-style: none;
   background-color: black;
   width: 55%;
 }
-
 .openbtn span:nth-of-type(1) {
 top:15px;	
 }
-
 .openbtn span:nth-of-type(2) {
 top:23px;
 }
-
 .openbtn span:nth-of-type(3) {
 top:31px;
 }
-
 .openbtn.active span:nth-of-type(1) {
   top: 18px;
   left: 18px;
@@ -167,11 +213,9 @@ top:31px;
   /* border: 1px solid white; */
   box-shadow: 0px 0px 1px white;
 }
-
 .openbtn.active span:nth-of-type(2) {
 opacity: 0;
 }
-
 .openbtn.active span:nth-of-type(3){
   top: 30px;
   left: 18px;
@@ -181,6 +225,7 @@ opacity: 0;
   /* border: 1px solid white; */
   box-shadow: 0px 0px 1px white;
 }
+
 
 
 
@@ -223,6 +268,10 @@ header {
   height: 100vh;
   background-image: url("../img/薔薇2.jpg");
   background-size: cover;
+  
+  @media (max-width: 768px) {
+    background-size: cover;
+  }
 }
 
 .header-title {

@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>人生、自己研鑽。</title>
-  <!-- ファビコン -->
-  <link rel="shortcut icon" href="./favicon.ico">
   <!-- font-awesome -->
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <!-- ファビコン -->
+  <link rel="shortcut icon" href="./favicon.ico">
   <!-- reset.css -->
-
+  <link rel="stylesheet" href="./assets/css/reset.css">
   <!-- index.css -->
   <link rel="stylesheet" type="text/css" href="./assets/css/index.css">
 </head>
@@ -18,25 +18,52 @@
 
 
 <body>
-  <!-- グローバルナビゲーション -->
-  <div class="openbtn"><span></span><span></span><span></span></div>
-  <nav id="g-nav">
-    <div id="g-nav-list"><!--ナビの数が増えた場合縦スクロールするためのdiv※不要なら削除-->
-      <ul>
-        <li><a href="#">Top</a></li> 
-        <li><a href="#">食事</a></li> 
-        <li><a href="#">運動</a></li> 
-        <li><a href="#">遊戯</a></li> 
-      </ul>
-    </div>
-  </nav>
-  <div class="circle-bg"></div>
+
+  <!-- ローディング （ロゴアウトラインアニメーション）-->
+  <div id="splash">
+    <div id="splash_logo">
+    <svg version="1.1" id="mask" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://
+    www.w3.org/1999/xlink" x="0px" y="0px" width="1856.5px" height="321.8px"
+    viewBox="0 0 1856.5 321.8" style="enable-background:new 0 0 1856.5 321.8;" xml:
+    space="preserve">
+    
+
+    <!-- 以下にここにSVGタグを貼り付ける（今は暫定的に記述しているだけ。） -->
+    <svg version="1.1" id="mask" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1856.5px" height="321.8px" viewBox="0 0 1856.5 321.8" style="enable-background:new 0 0 1856.5 321.8;" xml:space="preserve">
+      <text x="50%" y="50%">
+        <animate attributeName="opacity" from="0" to="1" dur="6s" begin="0s" repeatCount="indefinite" />
+        🥀
+      </text>
+    </svg>
+
+
+  </svg><!--このSVGタグの作り方は下記に記述-->
+    <!--/splash_logo--></div>
+    <!--/splash--></div>
+
+
+
+    <!-- グローバルナビゲーション -->
+    <div class="openbtn"><span></span><span></span><span></span></div>
+    <nav id="g-nav">
+      <div id="g-nav-list"><!--ナビの数が増えた場合縦スクロールするためのdiv※不要なら削除-->
+        <ul>
+          <li><a href="#">Top</a></li> 
+          <li><a href="#">食事</a></li> 
+          <li><a href="#">運動</a></li> 
+          <li><a href="#">遊戯</a></li> 
+        </ul>
+      </div>
+    </nav>
+    <div class="circle-bg"></div>
+
 
   <header>
     <div class="header-title">
-      <h1>人生、自己研鑽。</h1>
+      <h1>生涯、自己研鑽。</h1>
     </div>
   </header>
+
 
 
   <main>
@@ -64,6 +91,8 @@
 
 <!-- jQuery -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+<!-- vivus.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vivus/0.4.4/vivus.min.js"></script>
 
 <!-- index.js -->
 <script src="./assets/js/index.js"></script>
