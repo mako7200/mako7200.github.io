@@ -31,8 +31,8 @@ body {
 }
 .clock {
     position: relative;
-    width: 250px;
-    height: 250px;
+    width: 200px;
+    height: 200px;
     background: #2f363e;
     border-radius: 50%;
     box-shadow: 10px 50px 70px rgba(0, 0, 0, 0.25),
@@ -52,6 +52,7 @@ body {
     background-color: #2f363e;
     border: 1px solid #fff;
     border-radius: 50%;
+    z-index: 99;
 }
 .clock span {
     position: absolute;
@@ -59,11 +60,64 @@ body {
     color: #fff;
     text-align: center;
     transform: rotate(calc(30deg * var(--i)));
+    /*   360 / 12 = 30deg   */
 }
 .clock span b {
-    font-size: 15px;
+    font-size: 13px;   /*時計の数字の文字サイズ*/
     opacity: 0.25;
-    font-weight: 600;
+    font-weight: bold;
     display: inline-block;
     transform: rotate(calc(-30deg * var(--i)));
 }
+/*時計の中にある円*/
+.circle {
+    position: absolute;
+    width: 160px;
+    height: 160px;
+    border: 1px solid rgba(0, 0, 0, 0);   /*円はいらないので削除*/
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    z-index: 10;
+}
+.circle i {
+    position: absolute;
+    width: 5px;
+    height: 50%;
+    background: var(--clr);
+    opacity: 0.75;
+    transform-origin: bottom;
+    transform: scaleY(0.8);
+}
+.circle:nth-child(1) i {
+    width: 1px;
+    transform: scaleY(0.9);   /*秒針の長さ調整*/
+}
+.circle:nth-child(2) i {
+    width: 3px;
+    transform: scaleY(0.9);   /*長針の長さ調整*/
+}
+.circle2 {
+    width: 160px;
+    height: 160px;
+    z-index: 9;
+}
+.circle3 {
+    width: 110px;
+    height: 110px;
+    z-index: 8;
+    border: 1px solid rgba(0, 0, 0, 0);   /*短針の円の濃さを調整するために追加*/
+}
+/*針の先にある丸いぽち*/
+/* .circle::before {
+    content: '';
+    position: absolute;
+    top: -3px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--clr);
+    box-shadow: 0 0 20px var(--clr),
+    0 0 60px var(--clr);
+} */
