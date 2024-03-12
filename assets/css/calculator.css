@@ -1,0 +1,59 @@
+
+
+body{
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: hsl(0, 2%, 42%);
+}
+#calculator{
+    font-family: Arial, sans-serif;
+    background-color: hsl(0, 0%, 15%);
+    border-radius: 15px;
+    max-width: 300px;
+    overflow: hidden;   /*要素の境界外にはみ出た場合、非表示*/
+    box-shadow: 5px 5px 0px black;
+}
+#display{
+    width: 100%;
+    padding: 10px;
+    font-size: 2.5rem;
+    text-align: left;
+    border: none;
+    background-color: hsl(0, 0%, 20%);
+    color: white;
+}
+#keys{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);   /*親要素の幅を4等分、各列を同じ幅*/
+    gap: 10px;
+    padding: 25px;
+}
+button{
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    border: none;
+    background-color: hsl(0, 0%, 30%);
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+button:hover{
+    background-color: hsl(0, 0%, 40%);
+}
+button:active{
+    background-color: hsl(0, 0%, 50%);
+}
+.operator-btn{
+    background-color: hsl(35, 100%, 55%);
+}
+.operator-btn:hover{
+    background-color: hsl(35, 100%, 65%)
+}
+.operator-btn:active{
+    background-color: hsl(35, 100%, 75%)
+}

@@ -81,7 +81,7 @@ z-index:3;
   background: rgb(0, 0, 0);
   opacity: 0.9;
   /*丸のスタート位置と形状*/
-transform: scale(0);/*scaleをはじめは0に*/
+  transform: scale(0);/*scaleをはじめは0に*/
   top:calc(50% - 50px);/*50%から円の半径を引いた値*/
   left:calc(50% - 50px);/*50%から円の半径を引いた値*/
   transition: all .6s;/*0.6秒かけてアニメーション*/
