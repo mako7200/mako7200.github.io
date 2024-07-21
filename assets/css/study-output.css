@@ -308,7 +308,7 @@ header {
         letter-spacing: 5px;
         font-family: monospace;
         color: silver;
-        text-shadow: 0px 0px 25px rgb(159, 238, 130);
+        text-shadow: 2px 0px 2px rgb(0, 0, 0);
         /* text-shadow: 5px 5px 30px rgb(0, 238, 255); */
     }
 }
@@ -340,6 +340,7 @@ main {
 
 .bingo-text {
     font-family: monospace;
+    background-color: rgba(0, 0, 0, 0.2);
 }
 
 
