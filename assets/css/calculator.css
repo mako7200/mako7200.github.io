@@ -17,12 +17,15 @@ body{
     box-shadow: 5px 5px 0px black;
 }
 #display{
-    width: 100%;
+    /* width: 100%; */
+    /* 横幅をMAX240pxに設定（2024/07/21） */
+    max-width: 240px;
     /* padding: 10px; */
     /* 以下を10pxから25pxに変更してみた（2024/07/21） */
     padding: 25px;
     font-size: 2.5rem;
-    text-align: left;
+    /* text-alignをleftからrightに変更（2024/07/21） */
+    text-align: right;
     border: none;
     background-color: hsl(0, 0%, 20%);
     color: white;
