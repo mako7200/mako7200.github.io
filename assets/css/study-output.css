@@ -175,6 +175,82 @@
     box-shadow: 0px 0px 1px white;
 }
 
+/*===========================================================*/
+/*【アコーディオン】*/
+/*===========================================================*/
+/*アコーディオン全体*/
+.accordion-area{
+    list-style: none;
+    width: 100%;
+    max-width: 900px;
+    margin:0 auto;
+}
+
+.accordion-area li{
+    /* 【間隔を調整】以下を変更することで、アコーディオンの間隔を調整 */
+    margin: 20px 0;
+}
+
+.accordion-area section {
+    width: auto;
+    height: auto;
+}
+
+/*アコーディオンタイトル*/
+.title {
+    position: relative;/*+マークの位置基準とするためrelative指定*/
+    cursor: pointer;
+    /* font-size:1rem; */
+    /* font-weight: normal; */
+    /* padding: 3% 3% 3% 50px; */
+    transition: all .5s ease;
+
+    box-shadow: 2px 2px 10px rgb(255, 255, 255, 0.5);
+    padding: 2%;
+    font-size: 130%;
+    color: gray;
+    font-weight: bold;
+}
+
+/*アイコンの＋と×*/
+.title::before,
+.title::after{
+    position: absolute;
+    content:'';
+    width: 15px;
+    height: 2px;
+    background-color: #00ffbf;
+    border: #00ffbf 1px solid;
+    
+}
+.title::before{
+    top:48%;
+    left: 15px;
+    transform: rotate(0deg);
+    
+}
+.title::after{    
+    top:48%;
+    left: 15px;
+    transform: rotate(90deg);
+
+}
+/*closeというクラスがついたら形状変化*/
+.title.close::before{
+	transform: rotate(45deg);
+}
+
+.title.close::after{
+	transform: rotate(-45deg);
+}
+
+/*アコーディオンで現れるエリア*/
+.box {
+    display: none;/*はじめは非表示*/
+    line-height: 2.0;
+	margin:0 3% 3% 3%;
+    padding: 3%;
+}
 
 
 
@@ -230,7 +306,7 @@ header {
 main {
     width: auto;
     height: 250vh;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     font-weight: bold;
     text-shadow: 1px 1px 5px black;
     margin: 15vh auto;
@@ -240,12 +316,12 @@ main {
 }
 
 .main-title {
-    border: 1px solid yellowgreen;
+    /* border: 1px solid yellowgreen; */
     margin: 20px auto;
 }
 
 .main p {
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
     padding: 3px;
     font-size: 0.8rem;
     margin-bottom: 10px;
