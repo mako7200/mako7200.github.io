@@ -1,0 +1,269 @@
+/*===========================================================*/
+/*【  】*/
+/*===========================================================*/
+
+/*===========================================================*/
+/*【グローバルナビゲーション】*/
+/*===========================================================*/
+
+/*アクティブになったエリア*/
+#g-nav.panelactive{
+    /*position:fixed;にし、z-indexの数値を大きくして前面へ*/
+    position:fixed;
+    z-index: 999;
+    top: 0;
+    width:100%;
+    height: 100vh;
+}
+/*丸の拡大*/
+.circle-bg{
+    position: fixed;
+    z-index:3;
+    /*丸の形*/
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: rgb(0, 0, 0);
+    opacity: 0.9;
+    /*丸のスタート位置と形状*/
+    transform: scale(0);/*scaleをはじめは0に*/
+    top:calc(50% - 50px);/*50%から円の半径を引いた値*/
+    left:calc(50% - 50px);/*50%から円の半径を引いた値*/
+    transition: all .6s;/*0.6秒かけてアニメーション*/
+}
+.circle-bg.circleactive{
+    transform: scale(50);/*クラスが付与されたらscaleを拡大*/
+}
+/*ナビゲーションの縦スクロール*/
+#g-nav-list{
+    display: none;/*はじめは表示なし*/
+    /*ナビの数が増えた場合縦スクロール*/
+    position: fixed;
+    z-index: 999; 
+    width: 100%;
+    height: 100vh;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
+#g-nav.panelactive #g-nav-list{
+    display: block; /*クラスが付与されたら出現*/
+}
+/*ナビゲーション*/
+#g-nav ul {
+    opacity: 0;/*はじめは透過0*/
+    /*ナビゲーション天地中央揃え※レイアウトによって調整してください。不必要なら削除*/
+    position: absolute;
+    z-index: 999;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    padding: 0 30px 30px 30px;  /*中央にするために追加！*/
+    width: 100%;  /*文字を広げるために追加！*/
+}
+/*背景が出現後にナビゲーションを表示*/
+#g-nav.panelactive ul {
+    opacity:1;
+    }
+/* 背景が出現後にナビゲーション li を表示※レイアウトによって調整してください。不必要なら削除*/
+#g-nav.panelactive ul li{
+    animation-name:gnaviAnime;
+    animation-duration:1s;
+    animation-delay:.2s;/*0.2 秒遅らせて出現*/
+    animation-fill-mode:forwards;
+    opacity:0;
+}
+    @keyframes gnaviAnime{
+    0% {
+    opacity: 0;
+    }
+    100% {
+    opacity: 1;
+    }
+    }
+/*リストのレイアウト設定*/
+#g-nav li{
+    text-align: center; 
+    list-style: none;
+}
+/*ナビゲーションの中の文字*/
+#g-nav li a{
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+    padding:10px;
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px rgba(255, 255, 255);
+
+    @media (max-width: 768px) {
+        letter-spacing: 5px;
+        font-size: 16px;
+        font-weight: normal;
+    }
+}
+#g-nav li a:hover {
+    color: rgb(255, 0, 0);
+    text-shadow: 2px 2px 4px red;
+    transform: scale(1.1);
+    background: rgba(255, 0, 0, 0.3);
+    border-bottom: 1px solid rgb(255, 255, 255);
+}
+#g-nav li a:active {
+    color: rgb(255, 0, 0);
+    text-shadow: 2px 2px 4px red;
+    transform: scale(1.1);
+    background: rgba(255, 0, 0, 0.3);
+}
+
+/*========= ボタンのためのCSS ===============*/
+.openbtn{
+    position:fixed;
+    top:10px;
+    right: 10px;
+    z-index: 9999;/*ボタンを最前面に*/
+    cursor: pointer;
+    width: 50px;
+    height:50px;
+    /* border: 1px solid white; */
+    /* box-shadow: 2px 0px 4px  black; */
+
+    @media (max-width: 768px) {
+        top: 15px;
+        right: 20px;
+    }
+}
+/*×に変化*/	
+.openbtn span{
+    display: inline-block;
+    transition: all .4s;
+    position: absolute;
+    left: 14px;
+    height: 3px;
+    border: 0.5px solid black;
+    background-color: black;
+    width: 55%;
+}
+.openbtn span:nth-of-type(1) {
+    top:15px;	
+}
+.openbtn span:nth-of-type(2) {
+    top:23px;
+}
+.openbtn span:nth-of-type(3) {
+    top:31px;
+}
+.openbtn.active span:nth-of-type(1) {
+    top: 18px;
+    left: 18px;
+    transform: translateY(6px) rotate(-45deg);
+    width: 40%;
+    background-color: white;
+    /* border: 1px solid white; */
+    box-shadow: 0px 0px 1px white;
+}
+.openbtn.active span:nth-of-type(2) {
+    opacity: 0;
+}
+.openbtn.active span:nth-of-type(3){
+    top: 30px;
+    left: 18px;
+    transform: translateY(-6px) rotate(45deg);
+    width: 40%;
+    background-color: white;
+    /* border: 1px solid white; */
+    box-shadow: 0px 0px 1px white;
+}
+
+
+
+
+/*===========================================================*/
+/*【ここから本文】*/
+/*===========================================================*/
+
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0 auto;
+    font-family: serif;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    letter-spacing: 1px;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+header {
+    width: 100%;
+    height: 10vh;
+    top: 0;   /*常に画面上部にぴったり固定*/
+    border: 1px solid aqua;
+    display: flex;   /*子要素を横並び*/
+    flex-wrap: nowrap;   /*子要素を折返しせず1行に並べる*/
+    background-color: rgba(0, 0, 0, 0.1);
+    box-shadow: 2px 2px 10px white;
+
+    @media (max-width: 768px) {
+        
+    }
+
+}
+
+/* header {
+    height: 50vh;
+    background-image: url("../img/薔薇2.jpg");
+    background-size: cover;
+
+    @media (max-width: 768px) {
+        background-size: cover;
+    }
+} */
+
+.header-title {
+    width: 100%;
+    height: auto;
+    line-height: 2.0;
+    text-align: center;
+    margin: auto 10%;
+
+    @media (max-width: 768px) {
+        margin: 300px 50px 300px 0px;
+    }
+}
+
+
+
+footer {
+    width: 100%;
+    height: 50px;
+    /* border: 1px solid blue; */
+    position: relative;
+}
+
+.copy-right {
+    width: 100%;
+    height: 50px;
+    /* border: 1px solid red; */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+    background: #333;
+
+    @media (max-width: 768px) {
+        font-size: 1rem;
+    }
+}
+
+.copy-right p {
+    text-align: center;
+}
