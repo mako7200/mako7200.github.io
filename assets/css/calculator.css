@@ -18,7 +18,9 @@ body{
 }
 #display{
     width: 100%;
-    padding: 10px;
+    /* padding: 10px; */
+    /* 以下を10pxから25pxに変更してみた（2024/07/21） */
+    padding: 25px;
     font-size: 2.5rem;
     text-align: left;
     border: none;
@@ -38,7 +40,9 @@ button{
     border: none;
     background-color: hsl(0, 0%, 30%);
     color: white;
-    font-size: 1.5rem;
+    /* font-size: 1.5rem; */
+    /* 以下を1.5remから1.3remに変更してみた（2024/07/21） */
+    font-size: 1.3rem;
     font-weight: bold;
     cursor: pointer;
 }
