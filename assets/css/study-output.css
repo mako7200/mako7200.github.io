@@ -208,7 +208,7 @@
     box-shadow: 2px 2px 10px rgb(255, 255, 255, 0.5);
     padding: 2%;
     font-size: 130%;
-    color: gray;
+    color: rgb(255, 255, 255 , 0.8);
     font-weight: bold;
 }
 
@@ -301,6 +301,16 @@ header {
     line-height: 2.0;
     text-align: center;
     margin: auto 10%;
+    text-shadow: 1px 1px 5px black;
+
+    @media (max-width: 780px) {
+        font-size: 1.5rem;
+        letter-spacing: 5px;
+        font-family: monospace;
+        color: silver;
+        text-shadow: 0px 0px 25px rgb(159, 238, 130);
+        /* text-shadow: 5px 5px 30px rgb(0, 238, 255); */
+    }
 }
 
 main {
