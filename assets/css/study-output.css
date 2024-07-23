@@ -253,6 +253,30 @@
 }
 
 
+/* アコーディオン2階層 */
+.title-2::before,
+.title-2::after{
+    position: absolute;
+    content:'';
+    width: 15px;
+    height: 2px;
+    background-color: #00ff3c;
+    border: #00ff3c 1px solid;
+    
+}
+
+/* アコーディオン3階層 */
+.title-3::before,
+.title-3::after{
+    position: absolute;
+    content:'';
+    width: 15px;
+    height: 2px;
+    background-color: #eeff00;
+    border: #eeff00 1px solid;
+    
+}
+
 
 /*===========================================================*/
 /*【ここから本文】*/
@@ -341,6 +365,7 @@ main {
 .bingo-text {
     font-family: monospace;
     background-color: rgba(0, 0, 0, 0.2);
+    text-align: left;
 }
 
 
