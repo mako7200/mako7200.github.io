@@ -188,7 +188,7 @@
 
 .accordion-area li{
     /* 【間隔を調整】以下を変更することで、アコーディオンの間隔を調整 */
-    margin: 20px 0;
+    margin: 15px 0;
 }
 
 .accordion-area section {
@@ -219,8 +219,10 @@
     content:'';
     width: 15px;
     height: 2px;
-    background-color: #00ffbf;
-    border: #00ffbf 1px solid;
+    background-color: #3aadf5;
+    border: #3aadf5 1px solid;
+    border-radius: 10px;
+    
     
 }
 .title::before{
@@ -244,29 +246,52 @@
 	transform: rotate(-45deg);
 }
 
+/* -------------------------
+ここから、オリジナルで追加・修正した部分
+------------------------- */
+
 /*アコーディオンで現れるエリア*/
 .box {
     display: none;/*はじめは非表示*/
     line-height: 2.0;
 	margin:0 3% 3% 3%;
     padding: 3%;
+    @media(max-width:780px){
+        margin: 0;
+        padding: 1%;
+    }
 }
 
+/*アコーディオンで現れるエリア*/
+.box2 {
+    display: none;/*はじめは非表示*/
+    line-height: 1.5;
+	margin:0 3% 3% 3%;
+    padding: 3%;
+    @media(max-width:780px){
+        margin: 0;
+        padding: 1%;
+    }
+}
 
-/* アコーディオン2階層 */
-.title-2::before,
-.title-2::after{
+.title2::before,
+.title2::after{
     position: absolute;
     content:'';
-    width: 15px;
+    width: 13px;
     height: 2px;
     background-color: #00ff3c;
     border: #00ff3c 1px solid;
 }
+.title2 {
+    @media(max-width: 768px) {
+        font-size: 16px;
+    }
+}
 
 /* アコーディオン3階層 */
-.title-3::before,
-.title-3::after{
+.title3::before,
+.title3::after{
     position: absolute;
     content:'';
     width: 10px;
@@ -274,9 +299,9 @@
     background-color: #eeff00;
     border: #eeff00 1px solid;
 }
-.title-3 {
+.title3 {
     @media(max-width: 768px) {
-        font-size: 12px;
+        font-size: 16px;
     }
 }
 
@@ -292,7 +317,7 @@
 
 html, body {
     width: auto;
-    height: 300vh;
+    height: 1000vh;
     margin: 0 auto;
     font-family: serif;
     background-color: rgba(0, 0, 0, 0.5);
