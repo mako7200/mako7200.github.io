@@ -329,6 +329,9 @@ a {
     text-decoration: none;
 }
 
+span {
+    color: red;
+}
 
 header {
     width: 100%;
@@ -371,8 +374,7 @@ main {
     /* border: 1px solid red; */
     font-weight: bold;
     text-shadow: 1px 1px 5px black;
-    margin: 15vh auto;
-    padding: 5vh;
+    padding: 15vh 5vh;
     line-height: 1.5;
     text-align: center;
 }
